@@ -1,0 +1,19 @@
+{
+  "name": "ds-al-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaulFein/ds-al-2019.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaulFein/ds-al-2019/issues"
+  },
+  "homepage": "https://github.com/SaulFein/ds-al-2019#readme"
+}

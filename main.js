@@ -1,7 +1,12 @@
-myfunction = function(n) {
-    return n;
-}
+var slidingWindow = require('./sliding-window.js');
 
-let result = myfunction(5);
+const result = slidingWindow(5, [1, 3, 2, 6, -1, 4, 1, 8, 2]);
+  console.log(`Averages of subarrays of size K: ${result}`);
 
-document.getElementById("myText").innerHTML = result;
+// myfunction = function(n) {
+//     return n;
+// }
+
+// let result = myfunction(5);
+
+// document.getElementById("myText").innerHTML = result;
