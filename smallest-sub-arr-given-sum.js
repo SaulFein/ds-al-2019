@@ -1,47 +1,47 @@
-const smallest_subarray_with_given_sum = function(s, arr) {
-    // TODO: Write your code here
-    let windowStart = 0;
-    let windowSum = 0;
-    let smallestCountSoFar = null;
-    let window = []
-    if(arr.indexOf(s) > -1 ){
-        return 1;
-    }
-    for (var windowEnd = 0; windowEnd < arr.length; windowEnd++){
-      windowSum += arr[windowEnd];
-      window.push(arr[windowEnd]);
-      if(windowSum >= s){
-        if(smallestCountSoFar){
-          if(window.length < smallestCountSoFar){
-            smallestCountSoFar = window.length;
-          }
-        } else {
-          smallestCountSoFar = window.length;
-        }
-        windowSum -= arr[windowStart];
-        window.shift();
-        windowStart++;
-        if(windowSum >= s){
-          smallestCountSoFar = window.length;
-          windowSum -= arr[windowStart];
-          window.shift();
-          windowStart++;
-        } else if(smallestCountSoFar <= window.length + 1) {
-            windowSum -= arr[windowStart];
-            window.shift();
-            windowStart++;
-        }
-        windowStart++;
-        if(windowEnd < windowStart){
-            windowEnd = windowStart;
-        }
-      }
-    }
-    if(!smallestCountSoFar){
-      return 0;
-    }
-    return smallestCountSoFar;
-  };
+// const smallest_subarray_with_given_sum = function(s, arr) {
+//     // TODO: Write your code here
+//     let windowStart = 0;
+//     let windowSum = 0;
+//     let smallestCountSoFar = null;
+//     let window = []
+//     if(arr.indexOf(s) > -1 ){
+//         return 1;
+//     }
+//     for (var windowEnd = 0; windowEnd < arr.length; windowEnd++){
+//       windowSum += arr[windowEnd];
+//       window.push(arr[windowEnd]);
+//       if(windowSum >= s){
+//         if(smallestCountSoFar){
+//           if(window.length < smallestCountSoFar){
+//             smallestCountSoFar = window.length;
+//           }
+//         } else {
+//           smallestCountSoFar = window.length;
+//         }
+//         windowSum -= arr[windowStart];
+//         window.shift();
+//         windowStart++;
+//         if(windowSum >= s){
+//           smallestCountSoFar = window.length;
+//           windowSum -= arr[windowStart];
+//           window.shift();
+//           windowStart++;
+//         } else if(smallestCountSoFar <= window.length + 1) {
+//             windowSum -= arr[windowStart];
+//             window.shift();
+//             windowStart++;
+//         }
+//         windowStart++;
+//         if(windowEnd < windowStart){
+//             windowEnd = windowStart;
+//         }
+//       }
+//     }
+//     if(!smallestCountSoFar){
+//       return 0;
+//     }
+//     return smallestCountSoFar;
+//   };
   
   //Grocking the Coding interviews solution
   function smallest_subarray_with_given_sum(s, arr) {

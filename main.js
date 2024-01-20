@@ -1,6 +1,8 @@
 var slidingWindow = require('./sliding-window.js');
 var maxSumSubarrayOfSizeK = require('./max-sum-subarray-of-size-k.js');
 var smallestSubArrGivenSum = require('./smallest-sub-arr-given-sum.js');
+var urlifystring = require('./URLifyString.js');
+var bitwiseOpps = require('./bitwiseopps.js');
 // myfunction = function(n) {
 //     return n;
 // }
@@ -10,6 +12,8 @@ var smallestSubArrGivenSum = require('./smallest-sub-arr-given-sum.js');
 // const result = slidingWindow(5, [1, 3, 2, 6, -1, 4, 1, 8, 2]);
 //   console.log(`Averages of subarrays of size K: ${result}`);
 
-const result = smallestSubArrGivenSum(8, [3, 4, 1, 1, 6]);
-  console.log(`Smallest Sub Arr of Given Sum: ${result}`);
+// const result = smallestSubArrGivenSum(8, [3, 4, 1, 1, 6]);
+//   console.log(`Smallest Sub Arr of Given Sum: ${result}`);
 
+const result = bitwiseOpps(6, 23);
+console.log(result);
