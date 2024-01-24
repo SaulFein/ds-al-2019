@@ -32,7 +32,37 @@ function romanToInt(s: string): any {
 }
 
 //TODO try to solve without check for ( check if sArray[i] < sArray[i+1])
+function romanToInt2(s: string): any {
+  const romans = {
+    M: 1000,
+    CM: 900,
+    D: 500,
+    CD: 400,
+    C: 100,
+    XC: 90,
+    L: 50,
+    XL: 40,
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    III: 3,
+    II: 2,
+    I: 1,
+  };
 
+  let sArray = s.split('');
+  let res = 0;
+  for (let i = 0; i < sArray.length; i++) {
+    if (romans[sArray[i]] < romans[sArray[i + 1]]) {
+      res = res += romans[sArray[i + 1]] - romans[sArray[i]];
+      i = i + 1;
+    } else {
+      res = res += romans[sArray[i]];
+    }
+  }
+  return res;
+}
 //Awesome clean answers from leet code:
 // function romanToInt(s: string): number {
 //   const integers = s.split('').map(c => roman[c]);
