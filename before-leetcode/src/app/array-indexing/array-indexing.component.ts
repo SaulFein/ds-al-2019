@@ -11,7 +11,7 @@ export class ArrayIndexingComponent {
   iterateOverArrayResult_ = signal<string>('');
   iterateOverArrayInReverseResult_ = signal<string>('');
   everySecondElementResult_ = signal<string>('');
-  defaultArray = [1, 2, 3, 4, 5];
+  defaultArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   iterateOverArray(arr?: any[]) {
     if (!arr) {
@@ -43,10 +43,12 @@ export class ArrayIndexingComponent {
     if (!arr) {
       arr = [...this.defaultArray];
     }
-    for (let i = 0; i < arr.length; i + 2) {
-      console.log(arr[i]);
-      let currentResult = this.everySecondElementResult_();
-      this.everySecondElementResult_.set((currentResult += arr[i] + '\n'));
+    for (let i = 1; i <= arr.length - 1; i += 2) {
+      setTimeout(() => {
+        console.log(arr[i]);
+        let currentResult = this.everySecondElementResult_();
+        this.everySecondElementResult_.set((currentResult += arr[i] + '\n'));
+      }, i * 1000);
     }
   }
 }
