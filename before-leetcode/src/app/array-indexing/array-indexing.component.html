@@ -9,3 +9,8 @@
 <h2>Find every second element</h2>
 <button (click)="fetchEverySecondElement()">Run</button>
 <div>{{everySecondElementResult_()}}</div>
+
+<h2>Find the Index of a Target Element</h2>
+<input [ngModel]="searchForTarget"
+  (ngModelChange)="findTheTargetElement($event)" />
+<div>{{findTheTargetIndexResult_()}}</div>
